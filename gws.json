@@ -1,0 +1,23 @@
+{
+  "name": "nextjs-pages",
+  "version": "1.0.0",
+  "registry": {
+    "mode": "local"
+  },
+  "services": [
+    {
+      "name": "nextjs-pages",
+      "path": ".",
+      "image": "nextjs-pages",
+      "manifests": ".gws/k8s",
+      "dockerfile": ".gws/Dockerfile"
+    }
+  ],
+  "provision": {
+    "environments": {
+      "dev": {
+        "type": "k3d"
+      }
+    }
+  }
+}
