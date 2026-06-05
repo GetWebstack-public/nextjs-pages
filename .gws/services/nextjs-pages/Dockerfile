@@ -2,7 +2,6 @@ FROM node:20-alpine
 WORKDIR /app
 COPY package.json ./
 RUN npm install
-COPY . .
 EXPOSE 3000
 ENV HOST=0.0.0.0
-CMD ["npx", "next", "dev", "-H", "0.0.0.0", "-p", "3000"]
+CMD ["sh", "-c", "npm install && npx next dev -H 0.0.0.0 -p 3000"]

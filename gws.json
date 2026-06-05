@@ -8,15 +8,31 @@
     {
       "name": "nextjs-pages",
       "path": ".",
-      "image": "nextjs-pages",
-      "manifests": ".gws/k8s",
-      "dockerfile": ".gws/Dockerfile"
+      "port": 3000,
+      "hosts": ["nextjs-pages.nextjs-pages.local.getwebstack.dev"],
+      "fileSync": true,
+      "fileSyncIgnore": [
+        "/.git",
+        "/.idea",
+        "/.vscode",
+        "/.DS_Store",
+        "node_modules/",
+        ".next/",
+        "dist/",
+        "build/",
+        "coverage/",
+        ".turbo/",
+        "*.log"
+      ],
+      "dockerfile": ".gws/services/nextjs-pages/Dockerfile",
+      "manifests": ".gws/services/nextjs-pages/k8s"
     }
   ],
   "provision": {
     "environments": {
       "dev": {
-        "type": "k3d"
+        "type": "k3d",
+        "default": true
       }
     }
   }
