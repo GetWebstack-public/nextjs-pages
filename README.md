@@ -19,25 +19,37 @@ git clone https://github.com/GetWebstack-public/nextjs-pages
 cd nextjs-pages
 ```
 
-### 3. Initialise from template setup
+### 3. Log in to GetWebstack
 
 ```bash
-gws init --from-file gws.json
+gws login
 ```
 
-### 4. Deploy the service
+### 4. Initialise the project
+
+```bash
+gws init
+```
+
+### 5. Register the config
+
+```bash
+gws config import
+```
+
+### 6. Deploy the service
 
 ```bash
 gws up
 ```
 
-### 5. Stream logs
+### 7. Stream logs
 
 ```bash
 gws logs
 ```
 
-### 6. See deployment status
+### 8. See deployment status
 
 ```bash
 gws status
